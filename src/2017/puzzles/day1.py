@@ -30,7 +30,7 @@ class Day1:
 
 
 if __name__ == "__main__":
-    data = datareader.from_file("../2017/data/input1.csv")
+    data = datareader.read_file("../2017/data/input1.csv")
     print(Day1(data).solve1())
     print(Day1(data).solve2())
 

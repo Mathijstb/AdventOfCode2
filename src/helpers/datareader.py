@@ -1,16 +1,22 @@
+import re
 from pathlib import Path
 
 
-def from_str(s):
-    return s.split('\n')
+def read_data(data):
+    array = [re.split(r'\s+', line.strip()) for line in data]
+    if len(array) > 1:
+        return array
+    else:
+        list0 = array[0]
+        return list0 if len(list0) > 1 else list0[0]
 
 
-def from_file(f_in):
+def read_file(f_in):
     base_path = Path(__file__).parent
     file_path = (base_path / f_in).resolve()
     with open(file_path, 'r') as file:
-        array = [line.strip('\n') for line in file.readlines()]
-        return array if len(array) > 1 else array[0]
+        lines = file.read().splitlines()
+        return read_data(lines)
 
 
 def split(data, sep=''):
