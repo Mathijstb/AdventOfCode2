@@ -3,7 +3,7 @@ from unittest import TestCase
 
 from parameterized import parameterized
 
-import datareader
+from src.helpers import datareader
 
 
 class Day3:

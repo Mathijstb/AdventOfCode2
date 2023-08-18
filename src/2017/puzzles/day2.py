@@ -4,7 +4,7 @@ from unittest import TestCase
 from parameterized import parameterized
 import itertools
 
-import datareader
+from src.helpers import datareader
 
 
 class Day2:
